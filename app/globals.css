@@ -73,7 +73,7 @@
   h1, h2, h3, h4, h5, h6 { font-weight: 800; line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 8px; }
   h1 { font-size: 42px; } h2 { font-size: 32px; } h3 { font-size: 25px; } h4 { font-size: 20px; }
   p { margin: 0 0 12px; }
-  a:not([data-slot]) { color: var(--color-brand-700); text-underline-offset: 3px; }
+  a:not([data-slot]) { color: var(--color-brand-700); text-decoration-line: underline; text-underline-offset: 3px; }
   a:not([data-slot]):hover { color: var(--color-brand-800); }
   li::marker { color: var(--color-brand); font-weight: 800; font-variant-numeric: tabular-nums; }
   ol > li::marker { color: var(--color-brand-700); }
@@ -81,5 +81,8 @@
   :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
   ::selection { background: color-mix(in srgb, var(--color-brand) 30%, transparent); }
   button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+  /* Anchor jumps clear the sticky header; smooth only without reduced motion. */
+  section[id] { scroll-margin-top: 88px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 }
 .grayscale { filter: grayscale(1) contrast(1.08); }

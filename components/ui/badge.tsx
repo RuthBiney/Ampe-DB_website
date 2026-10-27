@@ -12,10 +12,18 @@ const badgeVariants = cva(
         accent: "bg-brand-100 text-brand-800",
         neutral: "bg-neutral-100 text-neutral-800",
         outline: "border border-brand text-brand",
+        // Research "Not part of frozen Baseline V1" tags.
+        "outline-muted": "border border-border text-neutral-800",
+      },
+      // Label tokens such as left_right.
+      mono: {
+        true: "font-mono",
+        false: "",
       },
     },
     defaultVariants: {
       variant: "neutral",
+      mono: false,
     },
   }
 )
@@ -23,6 +31,7 @@ const badgeVariants = cva(
 function Badge({
   className,
   variant = "neutral",
+  mono = false,
   asChild = false,
   ...props
 }: React.ComponentProps<"span"> &
@@ -33,7 +42,7 @@ function Badge({
     <Comp
       data-slot="badge"
       data-variant={variant}
-      className={cn(badgeVariants({ variant }), className)}
+      className={cn(badgeVariants({ variant, mono }), className)}
       {...props}
     />
   )
