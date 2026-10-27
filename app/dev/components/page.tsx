@@ -4,12 +4,13 @@ import type { Metadata } from "next"
 import * as React from "react"
 import { ArrowRightIcon, DownloadIcon, MailIcon } from "lucide-react"
 
+import { FaqTopics } from "@/components/faq/faq-topics"
 import { AutoGrid } from "@/components/patterns/auto-grid"
 import { ArrowLink } from "@/components/patterns/arrow-link"
 import { StaticChartPanel } from "@/components/patterns/bar-chart"
 import { Callout } from "@/components/patterns/callout"
 import { DocLayout } from "@/components/patterns/doc-layout"
-import { DocSection, Lead, Secondary, SubHeading } from "@/components/patterns/doc-section"
+import { Lead, Secondary, SubHeading } from "@/components/patterns/doc-section"
 import { Legend, LegendSwatch } from "@/components/patterns/legend"
 import { NumberedList } from "@/components/patterns/numbered-list"
 import { PageHeader } from "@/components/patterns/page-header"
@@ -22,12 +23,6 @@ import { TaskChart } from "@/components/patterns/task-chart"
 import { VideoTile } from "@/components/patterns/video-tile"
 import { Container } from "@/components/site/container"
 import { Eyebrow } from "@/components/site/eyebrow"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -39,7 +34,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { clips } from "@/content/clips"
-import { faqDefaultOpen, faqTopics } from "@/content/faq"
 import { faqRail, termsRail } from "@/content/sections"
 import { gettingStarted } from "@/content/home"
 import { packages } from "@/content/packages"
@@ -259,18 +253,7 @@ export default function ComponentsPage() {
       <Container>
         <PageHeader eyebrow="06 — FAQ" lines={["Questions", "researchers ask."]} />
         <DocLayout narrow rail={<SectionRail groups={faqRail} navLabel="Topics" />}>
-          {faqTopics.map((topic) => (
-            <DocSection key={topic.id} id={topic.id} number={topic.number} title={topic.title}>
-              <Accordion type="multiple" defaultValue={faqDefaultOpen}>
-                {topic.items.map((item) => (
-                  <AccordionItem key={item.id} value={item.id}>
-                    <AccordionTrigger>{item.question}</AccordionTrigger>
-                    <AccordionContent>{item.answer}</AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </DocSection>
-          ))}
+          <FaqTopics />
         </DocLayout>
       </Container>
     </main>
