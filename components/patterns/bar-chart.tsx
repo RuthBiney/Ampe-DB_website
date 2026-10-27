@@ -1,4 +1,5 @@
 import { Legend, LegendSwatch } from "@/components/patterns/legend"
+import { Card } from "@/components/ui/card"
 import { modalities, protocols, resultFor, type Modality, type Task } from "@/content/results"
 
 // Macro-F1 bar chart (Research 05.3; Home without the toggle). Fill width is
@@ -72,5 +73,21 @@ export function ChartAxis() {
       </span>
       <span />
     </div>
+  )
+}
+
+/** Home: the four-class chart without the task toggle. */
+export function StaticChartPanel() {
+  return (
+    <Card className="gap-[22px] p-7">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2.5">
+        <span className="text-[13px] font-semibold tracking-[.08em] uppercase">
+          Four-class Macro-F1 by protocol
+        </span>
+        <ChartLegend />
+      </div>
+      <ChartGroups task="four" />
+      <ChartAxis />
+    </Card>
   )
 }

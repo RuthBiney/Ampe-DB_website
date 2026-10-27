@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest"
 
+import { acknowledgementText, citationText } from "@/content/citation"
 import { clips } from "@/content/clips"
 import { faqDefaultOpen, faqTopics } from "@/content/faq"
+import { gettingStarted } from "@/content/home"
 import { landmarks, torsoLandmarks } from "@/content/landmarks"
 import { packages } from "@/content/packages"
 import { bestOf, drop, resultFor, results } from "@/content/results"
@@ -70,5 +72,28 @@ describe("clips", () => {
   it("has six clips and only the skeleton clip is silent", () => {
     expect(Object.keys(clips)).toEqual(["c179", "c179s", "c114", "c189", "c082", "c009"])
     expect(Object.values(clips).filter((c) => !c.hasAudio).map((c) => c.id)).toEqual(["c179s"])
+  })
+})
+
+describe("citation", () => {
+  it("matches the README citation and acknowledgement", () => {
+    expect(citationText).toBe(
+      "Biney, R. S., & Aboah, I. K. Y. (2026). Ampe-DB: A Dataset for Human Activity and Interaction Analysis Using the Ghanaian Game Ampe. Young Africans Research Academy (YARA)."
+    )
+    expect(acknowledgementText.startsWith("“")).toBe(true)
+    expect(acknowledgementText.endsWith("”")).toBe(true)
+  })
+})
+
+describe("Home getting started", () => {
+  it("links each step to its README target", () => {
+    expect(gettingStarted.map((s) => s.link.href)).toEqual([
+      "/terms",
+      "/getting-the-database#gt_access",
+      "/getting-the-database#gt_receive",
+      "/database#db_structure",
+      "/research#rs_protocols",
+      "/#home_cite",
+    ])
   })
 })

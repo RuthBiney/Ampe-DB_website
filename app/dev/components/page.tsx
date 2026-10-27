@@ -6,7 +6,7 @@ import { ArrowRightIcon, DownloadIcon, MailIcon } from "lucide-react"
 
 import { AutoGrid } from "@/components/patterns/auto-grid"
 import { ArrowLink } from "@/components/patterns/arrow-link"
-import { ChartAxis, ChartGroups, ChartLegend } from "@/components/patterns/bar-chart"
+import { StaticChartPanel } from "@/components/patterns/bar-chart"
 import { Callout } from "@/components/patterns/callout"
 import { DocLayout } from "@/components/patterns/doc-layout"
 import { DocSection, Lead, Secondary, SubHeading } from "@/components/patterns/doc-section"
@@ -30,7 +30,6 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -41,6 +40,7 @@ import {
 } from "@/components/ui/table"
 import { clips } from "@/content/clips"
 import { faqDefaultOpen, faqTopics } from "@/content/faq"
+import { gettingStarted } from "@/content/home"
 import { packages } from "@/content/packages"
 import { atAGlance } from "@/content/stats"
 
@@ -87,11 +87,6 @@ const faqRail = [
   },
 ]
 
-const steps = [
-  ["01", "Review the terms", "Read the Terms of Use and the Research Data Use Agreement.", "/terms", "Terms of Use"],
-  ["02", "Declare, then download", "Complete the access form stating your intended purpose, then download the dataset free of charge.", "/getting-the-database#gt_access", "Access the dataset"],
-  ["03", "Take only what you need", "Download only the package components your research requires.", "/getting-the-database#gt_receive", "What you receive"],
-] as const
 
 export default function ComponentsPage() {
   return (
@@ -214,9 +209,9 @@ export default function ComponentsPage() {
             />
           </div>
           <AutoGrid min="300px" as="ol" className="m-0 list-none gap-x-6 gap-y-10 p-0">
-            {steps.map(([number, title, text, href, label]) => (
-              <StepCard key={number} number={number} title={title} link={{ href, label }}>
-                {text}
+            {gettingStarted.slice(0, 3).map((step) => (
+              <StepCard key={step.number} number={step.number} title={step.title} link={step.link}>
+                {step.text}
               </StepCard>
             ))}
           </AutoGrid>
@@ -263,16 +258,7 @@ export default function ComponentsPage() {
 
         <Demo name="Bar charts (Home, Research)">
           <AutoGrid min="400px" className="items-start gap-x-[72px] gap-y-14">
-            <Card className="gap-[22px] p-7">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2.5">
-                <span className="text-[13px] font-semibold tracking-[.08em] uppercase">
-                  Four-class Macro-F1 by protocol
-                </span>
-                <ChartLegend />
-              </div>
-              <ChartGroups task="four" />
-              <ChartAxis />
-            </Card>
+            <StaticChartPanel />
             <TaskChart />
           </AutoGrid>
         </Demo>
