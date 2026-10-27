@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "shadcn/tailwind.css";
+
+/* Modernist theme — values from design-handoff/README.md → shadcn/ui theme. */
+:root {
+  --radius: 0rem;
+  --background: #f3f2f2;            /* Modernist --color-bg */
+  --foreground: #201e1d;            /* --color-text */
+  --card: #eae9e9;                  /* --color-surface */
+  --card-foreground: #201e1d;
+  --popover: #f3f2f2;
+  --popover-foreground: #201e1d;
+  --primary: #ec3013;               /* --color-accent */
+  --primary-foreground: #f3f2f2;
+  --secondary: transparent;
+  --secondary-foreground: #201e1d;
+  --muted: #eae9e9;
+  --muted-foreground: #605d5d;      /* neutral-700 */
+  --accent: color-mix(in srgb, #201e1d 7%, transparent);   /* shadcn's hover tint, not the brand red */
+  --accent-foreground: #201e1d;
+  --destructive: #ae1800;           /* accent-700 */
+  --border: color-mix(in srgb, #201e1d 40%, transparent);  /* --color-divider */
+  --input: color-mix(in srgb, #201e1d 40%, transparent);
+  --ring: #ec3013;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius-xs: 0; --radius-sm: 0; --radius-md: 0; --radius-lg: 0; --radius-xl: 0;
+  --radius-2xl: 0; --radius-3xl: 0; --radius-4xl: 0;
+}
+
+@theme {
+  --color-brand: #ec3013;
+  --color-brand-100: #fff2ef; --color-brand-200: #ffe0d9; --color-brand-300: #ffc4b8;
+  --color-brand-400: #ff9783; --color-brand-500: #ff563c; --color-brand-600: #dd2b0f;
+  --color-brand-700: #ae1800; --color-brand-800: #7c1405; --color-brand-900: #4d170e;
+  --color-neutral-100: #f8f4f4; --color-neutral-200: #eae7e7; --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6; --color-neutral-500: #9b9797; --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d; --color-neutral-800: #444141; --color-neutral-900: #2d2b2b;
+  --color-surface: #eae9e9;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+}
+
+/* README → Global CSS */
+@layer base {
+  * { border-color: var(--border); }
+  html { font-family: var(--font-sans); }
+  body { background: var(--background); color: var(--foreground); font-size: 16px; line-height: 1.7; text-wrap: pretty; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, h5, h6 { font-weight: 800; line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 8px; }
+  h1 { font-size: 42px; } h2 { font-size: 32px; } h3 { font-size: 25px; } h4 { font-size: 20px; }
+  p { margin: 0 0 12px; }
+  a:not([data-slot]) { color: var(--color-brand-700); text-underline-offset: 3px; }
+  a:not([data-slot]):hover { color: var(--color-brand-800); }
+  li::marker { color: var(--color-brand); font-weight: 800; font-variant-numeric: tabular-nums; }
+  ol > li::marker { color: var(--color-brand-700); }
+  code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .88em; }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+  ::selection { background: color-mix(in srgb, var(--color-brand) 30%, transparent); }
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+}
+.grayscale { filter: grayscale(1) contrast(1.08); }
