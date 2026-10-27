@@ -46,7 +46,7 @@ function SelectTrigger({
       data-size={size}
       className={cn(
         controlClasses,
-        "flex cursor-pointer items-center justify-between gap-2 text-left data-placeholder:text-foreground/60 *:data-[slot=select-value]:line-clamp-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex cursor-pointer items-center justify-between gap-2 text-left [line-height:1.2] data-placeholder:text-foreground/60 *:data-[slot=select-value]:line-clamp-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

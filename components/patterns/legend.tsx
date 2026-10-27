@@ -5,14 +5,16 @@ import { cn } from "@/lib/utils"
 export function LegendSwatch({
   swatchClassName,
   size = 11,
+  className,
   children,
 }: {
   swatchClassName: string // a background utility, e.g. "bg-brand"
   size?: 10 | 11
+  className?: string // e.g. "gap-2" for the Database duplicate legend
   children: React.ReactNode
 }) {
   return (
-    <span className={cn("inline-flex items-center", size === 11 ? "gap-[7px]" : "gap-2")}>
+    <span className={cn("inline-flex items-center", size === 11 ? "gap-[7px]" : "gap-2", className)}>
       <span
         aria-hidden="true"
         className={cn(size === 11 ? "size-[11px]" : "size-2.5", swatchClassName)}

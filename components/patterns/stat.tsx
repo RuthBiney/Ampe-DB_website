@@ -21,12 +21,14 @@ export function Stat({
   size = 34,
   tone = "ink",
   className,
+  labelClassName,
 }: {
   value: React.ReactNode
   label: React.ReactNode
   size?: keyof typeof numberSizes
   tone?: keyof typeof tones
   className?: string
+  labelClassName?: string // e.g. "leading-[1.7]" where the prototype leaves the label's line-height unset
 }) {
   const home = size === "home"
   return (
@@ -37,7 +39,8 @@ export function Stat({
       <div
         className={cn(
           "tracking-[.06em] text-neutral-700 uppercase",
-          home ? "mt-3 text-[13px] leading-[1.45]" : "mt-2 text-[12px] leading-[1.4]"
+          home ? "mt-3 text-[13px] leading-[1.45]" : "mt-2 text-[12px] leading-[1.4]",
+          labelClassName
         )}
       >
         {label}
