@@ -24,7 +24,7 @@ export function ArrowLink({
         className
       )}
     >
-      {children} →
+      {typeof children === "string" ? `${children} →` : <>{children} →</>}
     </Link>
   )
 }

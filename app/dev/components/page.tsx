@@ -40,6 +40,7 @@ import {
 } from "@/components/ui/table"
 import { clips } from "@/content/clips"
 import { faqDefaultOpen, faqTopics } from "@/content/faq"
+import { faqRail, termsRail } from "@/content/sections"
 import { gettingStarted } from "@/content/home"
 import { packages } from "@/content/packages"
 import { atAGlance } from "@/content/stats"
@@ -60,32 +61,6 @@ function Demo({ name, children }: { name: string; children: React.ReactNode }) {
   )
 }
 
-const termsRail = [
-  {
-    label: "Terms of use",
-    items: [
-      { id: "tm_accept", number: "02.1", label: "Acceptance of terms" },
-      { id: "tm_use", number: "02.2", label: "Permitted & prohibited use" },
-      { id: "tm_attribution", number: "02.3", label: "Attribution" },
-    ],
-  },
-  {
-    label: "Disclaimer & ethical use",
-    items: [
-      { id: "tm_warranty", number: "02.4", label: "No warranty" },
-      { id: "tm_privacy", number: "02.5", label: "Participant privacy" },
-      { id: "tm_culture", number: "02.6", label: "Cultural responsibility" },
-      { id: "tm_derived", number: "02.7", label: "Derived outputs" },
-    ],
-  },
-]
-
-const faqRail = [
-  {
-    label: "Topics",
-    items: faqTopics.map((t) => ({ id: t.id, number: t.number, label: t.title })),
-  },
-]
 
 
 export default function ComponentsPage() {

@@ -20,11 +20,11 @@ export function NumberedList({
         <li
           key={index}
           className={cn(
-            "grid gap-3 border-border py-3.5",
+            "grid gap-3 border-border",
             numberWidth === 44
               ? "grid-cols-[44px_minmax(0,1fr)]"
               : "grid-cols-[48px_minmax(0,1fr)] gap-4",
-            rules === "bottom" ? "border-b" : "border-t last:border-b"
+            rules === "bottom" ? "border-b py-3.5" : "border-t py-4 last:border-b"
           )}
         >
           <span className="font-extrabold text-brand-700 tabular-nums">

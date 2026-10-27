@@ -10,6 +10,10 @@ const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
   display: "swap",
+  // Archivo has no arrow glyph (→). Fall back to the system UI font as the
+  // design does, not to the size-adjusted Arial next/font inserts by default.
+  adjustFontFallback: false,
+  fallback: ["system-ui", "sans-serif"],
 })
 
 export const metadata: Metadata = {

@@ -7,6 +7,8 @@ import { gettingStarted } from "@/content/home"
 import { landmarks, torsoLandmarks } from "@/content/landmarks"
 import { packages } from "@/content/packages"
 import { bestOf, drop, resultFor, results } from "@/content/results"
+import { databaseRail, faqRail, gettingRail, researchRail, termsRail } from "@/content/sections"
+import type { RailGroup } from "@/components/patterns/section-rail"
 
 describe("results", () => {
   // README → Screens → Research → Results (Macro-F1), row by row.
@@ -95,5 +97,17 @@ describe("Home getting started", () => {
       "/research#rs_protocols",
       "/#home_cite",
     ])
+  })
+})
+
+describe("section IDs", () => {
+  // README → Routes and section IDs.
+  it("match the README for every doc page", () => {
+    const ids = (groups: readonly RailGroup[]) => groups.flatMap((g) => g.items.map((i) => i.id))
+    expect(ids(termsRail)).toEqual(["tm_accept", "tm_use", "tm_attribution", "tm_warranty", "tm_privacy", "tm_culture", "tm_derived"])
+    expect(ids(gettingRail)).toEqual(["gt_access", "gt_receive", "gt_download", "gt_verify", "gt_version"])
+    expect(ids(databaseRail)).toEqual(["db_overview", "db_structure", "db_formats", "db_naming", "db_pose", "db_labels", "db_pairs", "db_recording", "db_manifest"])
+    expect(ids(researchRail)).toEqual(["rs_tasks", "rs_protocols", "rs_results", "rs_refine", "rs_extract", "rs_qc", "rs_limits", "rs_pubs"])
+    expect(ids(faqRail)).toEqual(["faq_access", "faq_use", "faq_data", "faq_report"])
   })
 })
