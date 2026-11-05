@@ -20,10 +20,7 @@ export const navItems: readonly NavItem[] = [
 // Every "Access the dataset", "Download dataset" and "Complete the access form" CTA.
 export const accessFormHref = "/getting-the-database#gt_access"
 
-export const utilityBar = {
-  release: "Ampe-DB V1 · Baseline V1 benchmark · 2026 release",
-  academy: "Young Africans Research Academy (YARA)",
-}
+export const utilityBar = ["Ampe-DB V1", "Baseline V1 benchmark", "2026 release"]
 
 export const menuFootnote = "Ampe-DB V1 · Young Africans Research Academy (YARA)"
 
