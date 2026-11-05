@@ -31,7 +31,7 @@ export function downloadEmailText({
     "",
     `Questions: ${siteUrl}/contact`,
     "",
-    "The Ampe-DB team",
+    "The Ampe-DB team · Young Africans Research Academy (YARA)",
     "",
   ].join("\n")
 }

@@ -28,7 +28,7 @@ describe("download email", () => {
         "",
         "Questions: https://ampe-db.example/contact",
         "",
-        "The Ampe-DB team",
+        "The Ampe-DB team · Young Africans Research Academy (YARA)",
         "",
       ].join("\n")
     )
