@@ -78,9 +78,9 @@ describe("clips", () => {
 })
 
 describe("citation", () => {
-  it("matches the README citation and acknowledgement", () => {
+  it("matches the APA 7 citation and the README acknowledgement", () => {
     expect(citationText).toBe(
-      "Biney, R. S., & Aboah, I. K. Y. (2026). Ampe-DB: A Dataset for Human Activity and Interaction Analysis Using the Ghanaian Game Ampe. Young Africans Research Academy (YARA)."
+      "Biney, R. S., & Aboah, I. K. Y. (2026). Ampe-DB: A dataset for human activity and interaction analysis using the Ghanaian game Ampe (Version 1.0.0) [Data set]."
     )
     expect(acknowledgementText.startsWith("“")).toBe(true)
     expect(acknowledgementText.endsWith("”")).toBe(true)

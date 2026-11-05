@@ -2,10 +2,15 @@
 // CITATION.cff in the release is the source of truth; no DOI is assigned yet.
 // TODO: add the DOI or repository identifier once CITATION.cff carries one.
 
+/** Title exactly as in CITATION.cff. */
+export const datasetTitle =
+  "Ampe-DB: A Dataset for Human Activity and Interaction Analysis Using the Ghanaian Game Ampe"
+
+/** APA 7 dataset reference built from CITATION.cff (version 1.0.0); the title is in sentence case. */
 export const citation = {
   before: "Biney, R. S., & Aboah, I. K. Y. (2026). ",
-  title: "Ampe-DB: A Dataset for Human Activity and Interaction Analysis Using the Ghanaian Game Ampe.",
-  after: " Young Africans Research Academy (YARA).",
+  title: "Ampe-DB: A dataset for human activity and interaction analysis using the Ghanaian game Ampe",
+  after: " (Version 1.0.0) [Data set].",
 } as const
 
 /** Plain text copied by the "Copy citation" buttons. */

@@ -29,7 +29,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { citation, citationText } from "@/content/citation"
+import { citationText, datasetTitle } from "@/content/citation"
 import { railItem, researchRail } from "@/content/sections"
 import { movementTokens } from "@/lib/record-path"
 
@@ -342,7 +342,7 @@ export default function ResearchPage() {
             <article className="grid gap-3.5 bg-surface p-[clamp(20px,3vw,32px)]">
               <Eyebrow size="sm">Dataset paper · 2026</Eyebrow>
               <h3 className="m-0 max-w-[36ch] text-[clamp(21px,2.2vw,27px)] leading-[1.25]">
-                {citation.title.replace(/\.$/, "")}
+                {datasetTitle}
               </h3>
               <p className="m-0 text-[15px] text-neutral-800">
                 Ruth Senior Biney · Isaac Kojo Yedonu Aboah — Young Africans Research Academy (YARA)
