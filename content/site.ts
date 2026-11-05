@@ -28,7 +28,7 @@ export type FooterLink = { label: string; href: string }
 
 export const footer = {
   blurb:
-    "A dataset for human activity and interaction analysis using the Ghanaian game Ampe. Developed through the Young Africans Research Academy (YARA).",
+    "A dataset for human activity and interaction analysis using the Ghanaian game Ampe. Created by Ruth Senior Biney and presented at the Young Africans Research Academy (YARA).",
   columns: [
     {
       heading: "Dataset",

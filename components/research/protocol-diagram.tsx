@@ -118,9 +118,9 @@ export function ProtocolDiagram() {
             className="grid gap-x-8 gap-y-4 border-b border-border py-6 md:grid-cols-[minmax(0,13rem)_minmax(0,1fr)]"
           >
             <div className="grid content-start gap-1.5">
-              <h5 className="m-0 text-[18px] leading-[1.25]">
-                <span className="text-brand">{protocol.letter}.</span> {protocol.title}
-              </h5>
+              <h4 className="m-0 text-[18px] leading-[1.25]">
+                <span className="text-brand-700">{protocol.letter}.</span> {protocol.title}
+              </h4>
               <p className="m-0 text-[14px] text-neutral-700">{protocol.subtitle}</p>
             </div>
             <div className="grid gap-4">

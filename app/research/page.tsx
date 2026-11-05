@@ -34,7 +34,10 @@ import { citationText, datasetTitle } from "@/content/citation"
 import { railItem, researchRail } from "@/content/sections"
 import { movementTokens } from "@/lib/record-path"
 
-export const metadata: Metadata = { title: "Research" }
+const lead =
+  "Ampe-DB Baseline V1 asks whether models learn transferable interaction patterns rather than familiar recordings, player pairings or individual participants. Tasks, protocols, locked models and results are frozen."
+
+export const metadata: Metadata = { title: "Research", description: lead }
 
 const section = (id: string) => {
   const { number, label } = railItem(researchRail, id)
@@ -104,7 +107,7 @@ export default function ResearchPage() {
         <PageHeader
           eyebrow="05 — Research"
           lines={["Generalization across", "people and pairings."]}
-          lead="Ampe-DB Baseline V1 asks whether models learn transferable interaction patterns rather than familiar recordings, player pairings or individual participants. Tasks, protocols, locked models and results are frozen."
+          lead={lead}
         />
         <DocLayout rail={<SectionRail groups={researchRail} />}>
           <DocSection {...section("rs_tasks")} titleClassName="mb-7">

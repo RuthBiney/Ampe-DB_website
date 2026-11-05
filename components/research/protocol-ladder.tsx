@@ -40,7 +40,7 @@ export function ProtocolLadder() {
           </span>
           <div className="grid gap-2.5">
             <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <h4 className="m-0 text-[20px]">{step.title}</h4>
+              <h3 className="m-0 text-[20px]">{step.title}</h3>
               <Badge variant={"primary" in step ? "accent" : "neutral"} className="font-semibold">
                 {step.role}
               </Badge>

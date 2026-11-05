@@ -3,9 +3,10 @@ import { cn } from "cn"
 
 // Modernist .table. The wrapper scrolls sideways; give the table a min-width
 // at the call site (420–680px) so phones scroll instead of squashing it.
+// tabIndex lets keyboard users focus the wrapper and scroll it with the arrows.
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
-    <div data-slot="table-container" className="relative w-full overflow-x-auto">
+    <div data-slot="table-container" tabIndex={0} className="relative w-full overflow-x-auto">
       <table
         data-slot="table"
         className={cn("w-full border-collapse text-[14px]", className)}
@@ -42,7 +43,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "border-b-2 border-border p-2 text-left text-[11px] font-extrabold tracking-[.08em] text-foreground/60 uppercase",
+        "border-b-2 border-border p-2 text-left text-[11px] font-extrabold tracking-[.08em] text-neutral-700 uppercase",
         className
       )}
       {...props}

@@ -33,7 +33,7 @@ export function RecordPathBuilder() {
     <div className="mt-10 grid gap-[22px] bg-surface p-[clamp(20px,3vw,32px)]">
       <div className="grid gap-1.5">
         <Eyebrow size="sm">Record key → file paths</Eyebrow>
-        <h4 className="m-0 text-[21px]">Build the paths for any record</h4>
+        <h3 className="m-0 text-[21px]">Build the paths for any record</h3>
         <p className="m-0 text-[14px] text-neutral-700">
           Paths follow the naming rule. Confirm the record exists in the manifest before loading.
         </p>

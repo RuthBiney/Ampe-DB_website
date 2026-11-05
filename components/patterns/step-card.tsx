@@ -33,7 +33,7 @@ export function StepCard({
       <span className={cn(s.number, "leading-none font-extrabold text-brand tabular-nums")}>
         {number}
       </span>
-      {size === "lg" ? <h4 className={s.title}>{title}</h4> : <strong className={s.title}>{title}</strong>}
+      {size === "lg" ? <h3 className={s.title}>{title}</h3> : <strong className={s.title}>{title}</strong>}
       {children && <p className={cn("m-0 text-neutral-800", s.text)}>{children}</p>}
       {link && (
         <ArrowLink href={link.href} size="sm">

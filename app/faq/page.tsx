@@ -7,7 +7,10 @@ import { SectionRail } from "@/components/patterns/section-rail"
 import { Container } from "@/components/site/container"
 import { faqRail } from "@/content/sections"
 
-export const metadata: Metadata = { title: "FAQ" }
+const lead =
+  "Short answers to common questions. The Terms of Use, License and Research Data Use Agreement distributed with the release remain authoritative."
+
+export const metadata: Metadata = { title: "FAQ", description: lead }
 
 export default function FaqPage() {
   return (
@@ -16,7 +19,7 @@ export default function FaqPage() {
         <PageHeader
           eyebrow="06 — FAQ"
           lines={["Questions", "researchers ask."]}
-          lead="Short answers to common questions. The Terms of Use, License and Research Data Use Agreement distributed with the release remain authoritative."
+          lead={lead}
         />
         <DocLayout narrow rail={<SectionRail groups={faqRail} navLabel="Topics" />}>
           <FaqTopics />

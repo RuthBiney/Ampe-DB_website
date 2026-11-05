@@ -16,7 +16,7 @@ export function SiteHeader() {
     >
       <Link
         href="/"
-        className="mr-auto inline-flex items-center gap-2.5 text-[19px] font-extrabold tracking-[-.01em] text-foreground no-underline hover:text-brand"
+        className="mr-auto inline-flex items-center gap-2.5 pointer-coarse:min-h-11 text-[19px] font-extrabold tracking-[-.01em] text-foreground no-underline hover:text-brand"
       >
         <Brand />
       </Link>

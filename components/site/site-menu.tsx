@@ -46,6 +46,8 @@ export function SiteMenu() {
       </SheetTrigger>
       <SheetContent
         id="site-menu"
+        aria-modal="true"
+        aria-label="Site menu"
         aria-describedby={undefined}
         onOpenAutoFocus={(event) => {
           event.preventDefault()

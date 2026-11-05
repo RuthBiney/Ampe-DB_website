@@ -14,7 +14,10 @@ import { SectionRail } from "@/components/patterns/section-rail"
 import { Container } from "@/components/site/container"
 import { railItem, termsRail } from "@/content/sections"
 
-export const metadata: Metadata = { title: "Terms of Use" }
+const lead =
+  "By accessing, downloading or using Ampe-DB you agree to the Terms of Use, License and Research Data Use Agreement distributed with the release. This page summarizes them; the release documents remain authoritative."
+
+export const metadata: Metadata = { title: "Terms of Use", description: lead }
 
 const section = (id: string) => {
   const { number, label } = railItem(termsRail, id)
@@ -28,7 +31,7 @@ export default function TermsPage() {
         <PageHeader
           eyebrow="02 — Terms of Use"
           lines={["Open access.", "Responsible use."]}
-          lead="By accessing, downloading or using Ampe-DB you agree to the Terms of Use, License and Research Data Use Agreement distributed with the release. This page summarizes them; the release documents remain authoritative."
+          lead={lead}
         />
         <DocLayout rail={<SectionRail groups={termsRail} />}>
           <DocSection {...section("tm_accept")}>
@@ -171,7 +174,7 @@ function UseHeading({ tone, title }: { tone: "ink" | "brand"; title: string }) {
       >
         <Icon className="size-4" strokeWidth={2.5} />
       </span>
-      <h4 className="m-0 text-[20px]">{title}</h4>
+      <h3 className="m-0 text-[20px]">{title}</h3>
     </div>
   )
 }

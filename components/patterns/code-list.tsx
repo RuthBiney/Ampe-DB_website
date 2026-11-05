@@ -29,6 +29,7 @@ export function CodeList({
 export function CodeBlock({ className, ...props }: React.ComponentProps<"code">) {
   return (
     <code
+      tabIndex={0} // scrolls sideways on phones; focusable so the keyboard can too
       className={cn(
         "block overflow-x-auto bg-surface px-[18px] py-3.5 text-[13.5px] whitespace-nowrap",
         className

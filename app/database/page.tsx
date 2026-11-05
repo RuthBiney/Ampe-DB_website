@@ -33,7 +33,10 @@ import {
 import { movementTokens } from "@/lib/record-path"
 import { databaseRail, railItem } from "@/content/sections"
 
-export const metadata: Metadata = { title: "Database" }
+const lead =
+  "What was recorded, how records are organized and how each representation should be interpreted — written for researchers building loaders and baselines."
+
+export const metadata: Metadata = { title: "Database", description: lead }
 
 const section = (id: string) => {
   const { number, label } = railItem(databaseRail, id)
@@ -97,7 +100,7 @@ export default function DatabasePage() {
         <PageHeader
           eyebrow="04 — Database"
           lines={["Technical", "documentation."]}
-          lead="What was recorded, how records are organized and how each representation should be interpreted — written for researchers building loaders and baselines."
+          lead={lead}
         />
         <DocLayout rail={<SectionRail groups={databaseRail} />}>
           <DocSection {...section("db_overview")}>
@@ -120,7 +123,7 @@ export default function DatabasePage() {
             </AutoGrid>
             <div className="mt-11 grid gap-3">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h4 className="m-0 text-[19px]">Exact-duplicate provenance</h4>
+                <h3 className="m-0 text-[19px]">Exact-duplicate provenance</h3>
                 <span className="text-[13px] text-neutral-700">637 canonical records</span>
               </div>
               <ProportionBar

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch assets · Ampe-DB V1</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-2289e44d-f7dc-4a8a-ab05-d10a701b7f3d/styles.css">
+  <style>
+    body{margin:0;text-wrap:pretty;-webkit-font-smoothing:antialiased}
+    code,pre{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em}
+    a:not(.btn){color:var(--color-accent-700);text-underline-offset:3px}
+    a:not(.btn):hover{color:var(--color-accent-800)}
+  </style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:16px;line-height:1.7">
+<div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)">
+
+  <header style="padding:clamp(56px,7vw,88px) 0 56px;display:grid;gap:24px">
+    <span style="display:inline-flex;align-items:center;gap:10px;font-size:13px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700)"><span aria-hidden="true" style="display:inline-flex;gap:3px"><span style="width:9px;height:9px;background:var(--color-accent)"></span><span style="width:9px;height:9px;background:var(--color-text)"></span></span>Phase 6 — Before launch</span>
+    <h1 style="margin:0 0 0 -.058em;font-size:clamp(42px,6vw,84px);line-height:1;letter-spacing:-.03em"><span style="display:block">Favicon, social card</span><span style="display:block">and the phone menu.</span></h1>
+    <p style="margin:0;max-width:62ch;font-size:clamp(17px,1.5vw,20px);line-height:1.55">The three remaining pieces from README → “Not designed yet”, plus the review of the small-screen menu on the live build. The 404 page has its own page in this project.</p>
+  </header>
+
+  <!-- 02 Favicon -->
+  <section style="border-top:2px solid var(--color-divider);padding:40px 0 56px">
+    <span style="font-size:13px;letter-spacing:.08em;font-weight:600;color:var(--color-accent-700);font-variant-numeric:tabular-nums">02</span>
+    <h2 style="margin:10px 0 20px">Favicon</h2>
+    <p style="margin:0 0 28px;max-width:66ch;font-size:18px;line-height:1.65">The brand mark alone — the red and ink squares from the header — drawn edge to edge on a 32-unit grid (14 + 4 + 14) so it lands on whole pixels at 16×16 (7 + 2 + 7). The wordmark is dropped below 64px.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px;margin-bottom:40px">
+      <div style="background:var(--color-surface);padding:28px;display:grid;gap:18px;align-content:start">
+        <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700)">Actual sizes · favicon.svg</span>
+        <div style="display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap">
+          <span style="display:grid;gap:8px;justify-items:start;font-size:12px;color:var(--color-neutral-700)"><img src="brand/favicon.svg" width="16" height="16" alt="">16</span>
+          <span style="display:grid;gap:8px;justify-items:start;font-size:12px;color:var(--color-neutral-700)"><img src="brand/favicon.svg" width="32" height="32" alt="">32</span>
+          <span style="display:grid;gap:8px;justify-items:start;font-size:12px;color:var(--color-neutral-700)"><img src="brand/favicon.svg" width="64" height="64" alt="">64</span>
+        </div>
+      </div>
+      <div style="background:var(--color-surface);padding:28px;display:grid;gap:14px;align-content:start">
+        <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700)">In a browser tab</span>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--color-bg);border-top:2px solid var(--color-divider);font-size:13px;line-height:1.2">
+          <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect x="0" y="9" width="14" height="14" fill="#ec3013"></rect><rect x="18" y="9" width="14" height="14" fill="#201e1d"></rect></svg>
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Research · Ampe-DB V1</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--color-neutral-900);color:var(--color-neutral-200);font-size:13px;line-height:1.2">
+          <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect x="0" y="9" width="14" height="14" fill="#ec3013"></rect><rect x="18" y="9" width="14" height="14" fill="#f3f2f2"></rect></svg>
+          <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Research · Ampe-DB V1</span>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-neutral-800)"><strong>Yes, it changes for dark tabs.</strong> The SVG carries a <code>prefers-color-scheme: dark</code> rule that turns the ink square to the page ground (#f3f2f2); the red square never changes.</p>
+      </div>
+      <div style="background:var(--color-surface);padding:28px;display:grid;gap:14px;align-content:start">
+        <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700)">Fallback and home screen</span>
+        <div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap">
+          <span style="display:grid;gap:8px;justify-items:start;font-size:12px;color:var(--color-neutral-700)"><img src="brand/favicon.ico" width="32" height="32" alt="" style="outline:1px solid var(--color-divider)">favicon.ico</span>
+          <span style="display:grid;gap:8px;justify-items:start;font-size:12px;color:var(--color-neutral-700)"><img src="brand/apple-touch-icon.png" width="90" height="90" alt="" style="outline:1px solid var(--color-divider)">apple-touch-icon.png</span>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:var(--color-neutral-800)">These two can’t adapt, so they sit on a solid #f3f2f2 tile with the mark inset — readable on light and dark alike. The touch icon keeps a 27px margin so iOS’s corner mask never clips a square.</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto">
+    <table class="table" style="min-width:560px">
+      <thead><tr><th>File</th><th>Size</th><th>Ground</th><th>Download</th></tr></thead>
+      <tbody>
+        <tr><td><code>favicon.svg</code></td><td>32-unit viewBox, any size</td><td>Transparent; ink square → #f3f2f2 in dark mode</td><td><a href="brand/favicon.svg" download>favicon.svg</a></td></tr>
+        <tr><td><code>favicon.ico</code></td><td>32×32 + 16×16 inside</td><td>Solid #f3f2f2, squares 12/4/12 (6/2/6 at 16)</td><td><a href="brand/favicon.ico" download>favicon.ico</a></td></tr>
+        <tr><td><code>apple-touch-icon.png</code></td><td>180×180, RGB, no alpha</td><td>Solid #f3f2f2, squares 54/18/54</td><td><a href="brand/apple-touch-icon.png" download>apple-touch-icon.png</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="margin:20px 0 8px;font-size:16px;color:var(--color-neutral-800);max-width:66ch">Next.js App Router: drop them in <code>app/</code> as <code>favicon.ico</code>, <code>icon.svg</code> and <code>apple-icon.png</code> and the tags are generated. Otherwise:</p>
+    <pre style="margin:0;padding:clamp(20px,3vw,32px);background:var(--color-surface);overflow-x:auto;line-height:1.6">&lt;link rel="icon" href="/favicon.ico" sizes="32x32"&gt;
+&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</pre>
+  </section>
+
+  <!-- 03 Social preview -->
+  <section style="border-top:2px solid var(--color-divider);padding:48px 0 56px">
+    <span style="font-size:13px;letter-spacing:.08em;font-weight:600;color:var(--color-accent-700);font-variant-numeric:tabular-nums">03</span>
+    <h2 style="margin:10px 0 20px">Social preview image</h2>
+    <p style="margin:0 0 28px;max-width:66ch;font-size:18px;line-height:1.65">The Home headline as a poster: brand row, two 2px rules, the two-line H1 with the red second line, and the dataset line. Everything sits inside the central 1000×520 (outlined in red below, not part of the image); only the rules run to the edges, so a crop loses nothing.</p>
+
+    <figure style="margin:0 0 12px;max-width:1000px">
+      <div style="position:relative;outline:1px solid var(--color-divider)">
+        <img src="brand/og-image.png" alt="Ampe-DB V1. Movement is data. Culture is context. A dataset for human activity and interaction analysis using the Ghanaian game Ampe, from the Young Africans Research Academy (YARA)." style="display:block;width:100%;height:auto">
+        <span aria-hidden="true" style="position:absolute;left:8.3333%;top:8.7302%;width:83.3333%;height:82.5397%;outline:1px dashed var(--color-accent);pointer-events:none"></span>
+      </div>
+      <figcaption style="font-size:13px;color:var(--color-neutral-700);margin-top:8px">og-image.png · 1200×630 PNG · safe area 1000×520 dashed · <a href="brand/og-image.png" download>Download</a></figcaption>
+    </figure>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;margin-top:32px">
+      <div style="padding:18px 20px;display:grid;gap:6px;background:var(--color-surface)">
+        <strong style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Alt text</strong>
+        <span style="font-size:15px;line-height:1.6">Ampe-DB V1. Movement is data. Culture is context. A dataset for human activity and interaction analysis using the Ghanaian game Ampe, from the Young Africans Research Academy (YARA).</span>
+      </div>
+      <div style="padding:18px 20px;display:grid;gap:6px;background:var(--color-surface)">
+        <strong style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">One image or per page?</strong>
+        <span style="font-size:15px;line-height:1.6">One image for the whole site. Per-page cards would only repeat the page title that Slack, LinkedIn and X already print under the image. Revisit if Research results get shared on their own.</span>
+      </div>
+    </div>
+    <pre style="margin:24px 0 0;padding:clamp(20px,3vw,32px);background:var(--color-surface);overflow-x:auto;line-height:1.6">&lt;meta property="og:image" content="https://ampe-db-website.vercel.app/og-image.png"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:image:alt" content="Ampe-DB V1. Movement is data. Culture is context. …"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;</pre>
+    <p style="margin:16px 0 0;font-size:16px;color:var(--color-neutral-800);max-width:66ch">Next.js: <code>app/opengraph-image.png</code> plus <code>app/opengraph-image.alt.txt</code> does the same. Use the absolute production URL once the domain is final.</p>
+  </section>
+
+  <!-- 04 Nav review -->
+  <section style="border-top:2px solid var(--color-divider);padding:48px 0 88px">
+    <span style="font-size:13px;letter-spacing:.08em;font-weight:600;color:var(--color-accent-700);font-variant-numeric:tabular-nums">04</span>
+    <h2 style="margin:10px 0 20px">Small-screen menu — review</h2>
+    <div style="border-top:2px solid var(--color-divider);padding-top:14px;margin-bottom:28px;max-width:760px">
+      <div style="font-weight:800;font-size:40px;line-height:1;letter-spacing:-.02em;color:var(--color-accent)">Approved</div>
+      <div style="margin-top:10px;font-size:13px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700)">Live build checked at 360, 390 and 768px on 5 Nov 2026 · one small fix</div>
+    </div>
+    <p style="margin:0 0 28px;max-width:66ch;font-size:18px;line-height:1.65">The full-screen menu in the build is the design: keep it. It matches the handoff spec row for row, and the behaviour is right.</p>
+    <div style="overflow-x:auto">
+    <table class="table" style="min-width:620px">
+      <thead><tr><th>Check</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:800">Header row</td><td>Brand + Menu (44px) at 360/390; “Download dataset” is in the header at 768 (spec: from 640). No sideways scroll at any width.</td></tr>
+        <tr><td style="font-weight:800">Panel</td><td>Full screen, no animation, no radius or shadow. Brand + Close on a 2px rule; seven numbered rows on 1px rules; labels 34px at 768.</td></tr>
+        <tr><td style="font-weight:800">Current page</td><td>Red square and <code>aria-current</code> on the right row (checked on Home, Research, Getting the Database).</td></tr>
+        <tr><td style="font-weight:800">Focus and scroll</td><td>Opens with focus on Close, page scroll locked, Tab stays inside, Escape closes and returns focus to Menu.</td></tr>
+        <tr><td style="font-weight:800">Links</td><td>Choosing a row navigates and closes the panel.</td></tr>
+        <tr><td style="font-weight:800">Short screens</td><td>At 360×640 the panel scrolls about 60px to reach the YARA line — expected.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="margin-top:28px;padding:18px 20px;max-width:760px;display:grid;gap:6px;background:var(--color-surface)">
+      <strong style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Fix before launch</strong>
+      <span style="font-size:15px;line-height:1.6">The panel has <code>role="dialog"</code> but no <code>aria-modal="true"</code>. Add it, with an <code>aria-label</code> of “Site menu”, so screen readers treat the page behind as inert.</span>
+    </div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3200}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

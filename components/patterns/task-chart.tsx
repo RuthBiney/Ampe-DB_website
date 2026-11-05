@@ -11,7 +11,7 @@ export function TaskChart() {
     <Card className="gap-[22px] p-[clamp(20px,3vw,32px)]">
       <Tabs defaultValue="four" className="contents">
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3.5">
-          <h4 className="m-0 text-[19px]">Macro-F1 by protocol</h4>
+          <h3 className="m-0 text-[19px]">Macro-F1 by protocol</h3>
           <TabsList aria-label="Task">
             {tasks.map((task) => (
               <TabsTrigger key={task.id} value={task.id}>

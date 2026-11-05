@@ -1,8 +1,10 @@
-// The six Home clips (README → Assets). Files live in public/videos/.
+// The six Home clips (README → Assets). Files live in public/videos/; posters
+// (each clip's first frame) in public/posters/.
 
 export type Clip = {
   id: string
   src: string
+  poster: string // first frame, in public/posters/
   label: string // accessible name of the <video>
   record: string // used in the toggle names, e.g. "Unmute right_right_C179"
   tag: string
@@ -13,6 +15,7 @@ export const clips = {
   c179: {
     id: "c179",
     src: "/videos/right_right_C179.mp4",
+    poster: "/posters/right_right_C179.jpg",
     label: "Ampe interaction, canonical record right_right_C179",
     record: "right_right_C179",
     tag: "RGB · videos/",
@@ -21,6 +24,7 @@ export const clips = {
   c179s: {
     id: "c179s",
     src: "/videos/skeleton_right_right_C179.mp4",
+    poster: "/posters/skeleton_right_right_C179.jpg",
     label: "Rendered skeleton video, canonical record right_right_C179",
     record: "skeleton_right_right_C179",
     tag: "Skeleton · skeleton/videos/",
@@ -29,6 +33,7 @@ export const clips = {
   c114: {
     id: "c114",
     src: "/videos/left_right_C114.mp4",
+    poster: "/posters/left_right_C114.jpg",
     label: "Ampe interaction, canonical record left_right_C114",
     record: "left_right_C114",
     tag: "left_right_C114 · different legs",
@@ -37,6 +42,7 @@ export const clips = {
   c189: {
     id: "c189",
     src: "/videos/right_right_C189.mp4",
+    poster: "/posters/right_right_C189.jpg",
     label: "Ampe interaction, canonical record right_right_C189",
     record: "right_right_C189",
     tag: "right_right_C189 · same legs",
@@ -45,6 +51,7 @@ export const clips = {
   c082: {
     id: "c082",
     src: "/videos/right_left_C082.mp4",
+    poster: "/posters/right_left_C082.jpg",
     label: "Ampe interaction, canonical record right_left_C082",
     record: "right_left_C082",
     tag: "right_left_C082 · different legs",
@@ -53,6 +60,7 @@ export const clips = {
   c009: {
     id: "c009",
     src: "/videos/left_left_C009.mp4",
+    poster: "/posters/left_left_C009.jpg",
     label: "Ampe interaction, canonical record left_left_C009",
     record: "left_left_C009",
     tag: "left_left_C009 · same legs",

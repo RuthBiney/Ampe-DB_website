@@ -6,9 +6,9 @@ import { Slot } from "radix-ui"
 // Modernist .btn: Archivo 800, 14px / 1.2, padding 8px 14.4px, gap 6px,
 // 1px transparent border. Flat and instant: no radius, shadow or transition.
 // Line-height is an arbitrary property so a call-site font size (text-[15px])
-// doesn't merge it away.
+// doesn't merge it away. On touch screens every button is at least 44px tall.
 const buttonVariants = cva(
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 border border-transparent px-[14.4px] py-2 text-[14px] [line-height:1.2] font-extrabold no-underline select-none disabled:cursor-not-allowed disabled:opacity-45 aria-disabled:cursor-not-allowed aria-disabled:opacity-45 [&_svg]:pointer-events-none [&_svg]:block [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 border border-transparent px-[14.4px] py-2 pointer-coarse:min-h-11 text-[14px] [line-height:1.2] font-extrabold no-underline select-none disabled:cursor-not-allowed disabled:opacity-45 aria-disabled:cursor-not-allowed aria-disabled:opacity-45 [&_svg]:pointer-events-none [&_svg]:block [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {

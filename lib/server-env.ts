@@ -36,6 +36,16 @@ export function siteUrl(): string {
   return url.origin
 }
 
+// Base URL for metadata, the sitemap and robots.txt, read at build time.
+// Unlike siteUrl() it never throws: a build without SITE_URL falls back to
+// Vercel's production address, then to localhost.
+export function publicSiteUrl(): URL {
+  const configured = process.env.SITE_URL?.trim()
+  if (configured) return new URL(new URL(configured).origin)
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim()
+  return new URL(vercel ? `https://${vercel}` : "http://localhost:3000")
+}
+
 export function tokenSecret(): Uint8Array {
   const { DOWNLOAD_TOKEN_SECRET } = requireEnv("DOWNLOAD_TOKEN_SECRET")
   if (DOWNLOAD_TOKEN_SECRET.length < 32) {

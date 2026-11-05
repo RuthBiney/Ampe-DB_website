@@ -144,7 +144,7 @@ export default function HomePage() {
                   <span className="font-extrabold tabular-nums">{r.number}</span>
                   <Badge variant={r.accent ? "accent" : "neutral"}>{r.tag}</Badge>
                 </div>
-                <h4 className="mt-1.5 mb-0 text-[19px]">{r.title}</h4>
+                <h3 className="mt-1.5 mb-0 text-[19px]">{r.title}</h3>
                 <p className="m-0 text-[14.5px] leading-[1.6] text-neutral-800">{r.text}</p>
                 <code className="text-[12.5px] text-neutral-700">{r.folder}</code>
               </article>
@@ -207,7 +207,7 @@ export default function HomePage() {
           </AutoGrid>
           <div className="mt-[72px] flex flex-wrap items-start gap-x-16 gap-y-6">
             <div className="flex-[1_1_240px]">
-              <h4 className="m-0 text-[20px]">Recommended first files</h4>
+              <h3 className="m-0 text-[20px]">Recommended first files</h3>
               <p className="mt-2 mb-0 text-[15px] text-neutral-800">Open these before writing any code.</p>
             </div>
             <div className="min-w-0 flex-[3_1_520px]">

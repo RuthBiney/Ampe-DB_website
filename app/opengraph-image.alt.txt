@@ -1,0 +1,1 @@
+Ampe-DB V1. Movement is data. Culture is context. A dataset for human activity and interaction analysis using the Ghanaian game Ampe, from the Young Africans Research Academy (YARA).

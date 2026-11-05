@@ -101,6 +101,7 @@ export function VideoTile({
       <video
         ref={videoRef}
         src={clip.src}
+        poster={clip.poster}
         loop
         playsInline
         preload={preload}

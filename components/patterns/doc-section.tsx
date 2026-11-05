@@ -48,7 +48,7 @@ export function Secondary({ className, ...props }: React.ComponentProps<"p">) {
   return <p className={cn("m-0 max-w-[66ch] text-neutral-800", className)} {...props} />
 }
 
-/** Sub-heading H4: 19px, margin 44px 0 8–16px. */
-export function SubHeading({ className, ...props }: React.ComponentProps<"h4">) {
-  return <h4 className={cn("mt-11 mb-3 text-[19px]", className)} {...props} />
+/** Sub-heading H3: 19px, margin 44px 0 8–16px. */
+export function SubHeading({ className, ...props }: React.ComponentProps<"h3">) {
+  return <h3 className={cn("mt-11 mb-3 text-[19px]", className)} {...props} />
 }

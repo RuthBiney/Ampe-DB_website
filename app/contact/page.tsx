@@ -8,7 +8,10 @@ import { PageHeader } from "@/components/patterns/page-header"
 import { Container } from "@/components/site/container"
 import { contactTopics, team } from "@/content/contact"
 
-export const metadata: Metadata = { title: "Contact Us" }
+const lead =
+  "Ampe-DB was created by Ruth Senior Biney and presented at the Young Africans Research Academy (YARA). It aims to advance research capacity, culturally grounded data resources and reproducible human interaction research."
+
+export const metadata: Metadata = { title: "Contact Us", description: lead }
 
 function Kicker({ children }: { children: string }) {
   return (
@@ -25,7 +28,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="07 — Contact Us"
           lines={["Contact", "the team."]}
-          lead="Ampe-DB was created by Ruth Senior Biney and presented at the Young Africans Research Academy (YARA). It aims to advance research capacity, culturally grounded data resources and reproducible human interaction research."
+          lead={lead}
         />
 
         <section className="border-t-2 border-border pt-10 pb-16">

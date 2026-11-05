@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 page · Ampe-DB V1</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-2289e44d-f7dc-4a8a-ab05-d10a701b7f3d/styles.css">
+  <style>
+    body{margin:0;text-wrap:pretty;-webkit-font-smoothing:antialiased}
+    code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em}
+    .frame{container-type:inline-size;--gx:clamp(20px,5cqw,64px)}
+    .w390{width:390px}.w768{width:768px}.w1440{width:1440px}
+    .nav-full{display:none}
+    .cta-sm{display:none}
+    @container (min-width:640px){.cta-sm{display:inline-flex}}
+    @container (min-width:1280px){.nav-full{display:flex}.nav-compact{display:none}}
+    .frame a.row:hover .row-title{color:var(--color-accent-700)}
+  </style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-surface);font-family:var(--font-body);color:var(--color-text);padding:56px 56px 96px">
+  <div style="display:grid;gap:10px;max-width:760px;margin-bottom:48px">
+    <span style="font-size:13px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700)">Phase 6 — Not designed yet · 01</span>
+    <h1 style="font-size:42px;line-height:1.04;letter-spacing:-.025em;margin:0">404 page</h1>
+    <p style="margin:0;font-size:16px;line-height:1.6;color:var(--color-neutral-800)">Same utility bar, header and footer as every page; the body follows the inner-page header pattern, then four numbered routes back. Shown at 390, 768 and 1440px. Serve it with HTTP status 404 and <code>noindex</code>; page title "Page not found · Ampe-DB V1". The red second line matches the Home H1 and is the page's only large red type.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:56px">
+  <sc-for list="{{ frames }}" as="f" hint-placeholder-count="3">
+  <div style="display:grid;gap:12px;flex:none">
+    <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700)">{{ f.label }}</span>
+    <div class="frame {{ f.cls }}">
+    <div style="background:var(--color-bg);font-size:16px;line-height:1.7;outline:1px solid var(--color-divider)">
+
+      <div style="border-bottom:1px solid var(--color-divider)">
+        <div style="max-width:1240px;margin:0 auto;padding:7px var(--gx);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 24px;font-size:12px;line-height:1.6;letter-spacing:.07em;text-transform:uppercase;color:var(--color-neutral-700)">
+          <span>Ampe-DB V1 · Baseline V1 benchmark · 2026 release</span>
+          <span>Young Africans Research Academy (YARA)</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main" style="background:var(--color-bg);flex-wrap:wrap;row-gap:10px;column-gap:28px;padding:14px max(var(--gx), calc((100cqw - 1240px) / 2 + var(--gx)))">
+        <a href="#/home" class="nav-brand" style="display:inline-flex;align-items:center;gap:10px;font-size:19px;letter-spacing:-.01em">
+          <span aria-hidden="true" style="display:inline-flex;gap:3px"><span style="width:9px;height:9px;background:var(--color-accent)"></span><span style="width:9px;height:9px;background:var(--color-text)"></span></span>
+          <span>Ampe-DB</span>
+          <span class="tag tag-accent" style="font-size:10.5px;padding:1px 6px;letter-spacing:.06em;font-weight:600">V1</span>
+        </a>
+        <div class="nav-full" style="flex-wrap:wrap;align-items:center;gap:6px 22px">
+          <a href="#/home">Home</a>
+          <a href="#/terms">Terms of Use</a>
+          <a href="#/getting">Getting the Database</a>
+          <a href="#/database">Database</a>
+          <a href="#/research">Research</a>
+          <a href="#/faq">FAQ</a>
+          <a href="#/contact">Contact Us</a>
+        </div>
+        <a class="btn btn-primary nav-full" href="#/getting/gt_access" style="color:var(--color-bg);font-size:14px;gap:8px">Download dataset <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></a>
+        <div class="nav-compact" style="display:flex;align-items:center;gap:10px">
+          <a class="btn btn-primary cta-sm" href="#/getting/gt_access" style="color:var(--color-bg);font-size:14px;gap:8px;min-height:44px">Download dataset <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></a>
+          <span class="btn btn-secondary" style="font-size:14px;gap:8px;min-height:44px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 6h16"></path><path d="M4 18h16"></path></svg><span>Menu</span></span>
+        </div>
+      </nav>
+
+      <main style="max-width:1240px;margin:0 auto;padding:0 var(--gx)">
+        <header style="padding:clamp(56px,7cqw,88px) 0 56px;display:grid;gap:24px">
+          <span style="font-size:13px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700)">404 — Page not found</span>
+          <h1 style="margin:0 0 0 -.058em;font-size:clamp(42px,6cqw,84px);line-height:1;letter-spacing:-.03em">
+            <span style="display:block">This page isn’t</span>
+            <span style="display:block;color:var(--color-accent)">in the dataset.</span>
+          </h1>
+          <p style="margin:0;max-width:62ch;font-size:clamp(17px,1.5cqw,20px);line-height:1.55">The address may be mistyped, or the page may have moved. Everything in Ampe-DB V1 is still here — pick up from one of the pages below.</p>
+          <p style="margin:0;font-size:13px;line-height:1.5;color:var(--color-neutral-700);overflow-wrap:anywhere">Requested address: <code style="color:var(--color-text)">/database/pose-format</code></p>
+        </header>
+
+        <section aria-labelledby="nf-next" style="border-top:2px solid var(--color-divider);padding:40px 0 88px;max-width:860px">
+          <h2 id="nf-next" style="margin:0 0 10px;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700);font-family:var(--font-body)">Where to next</h2>
+          <ol style="list-style:none;margin:0;padding:0;display:grid">
+            <li><a class="row" href="#/home" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid var(--color-divider);color:var(--color-text);text-decoration:none">
+              <span style="font-weight:800;color:var(--color-accent-700);font-variant-numeric:tabular-nums;line-height:1.5">01</span>
+              <span style="display:grid;gap:4px"><span class="row-title" style="font-weight:800;font-size:clamp(22px,2.4cqw,28px);line-height:1.15;letter-spacing:-.015em">Home →</span><span style="font-size:15px;line-height:1.6;color:var(--color-neutral-800)">What Ampe-DB is, the headline numbers and how to start.</span></span>
+            </a></li>
+            <li><a class="row" href="#/getting" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid var(--color-divider);color:var(--color-text);text-decoration:none">
+              <span style="font-weight:800;color:var(--color-accent-700);font-variant-numeric:tabular-nums;line-height:1.5">02</span>
+              <span style="display:grid;gap:4px"><span class="row-title" style="font-weight:800;font-size:clamp(22px,2.4cqw,28px);line-height:1.15;letter-spacing:-.015em">Getting the Database →</span><span style="font-size:15px;line-height:1.6;color:var(--color-neutral-800)">Complete the use declaration and get your personal download link by email.</span></span>
+            </a></li>
+            <li><a class="row" href="#/faq" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid var(--color-divider);color:var(--color-text);text-decoration:none">
+              <span style="font-weight:800;color:var(--color-accent-700);font-variant-numeric:tabular-nums;line-height:1.5">03</span>
+              <span style="display:grid;gap:4px"><span class="row-title" style="font-weight:800;font-size:clamp(22px,2.4cqw,28px);line-height:1.15;letter-spacing:-.015em">FAQ →</span><span style="font-size:15px;line-height:1.6;color:var(--color-neutral-800)">Answers on access, permitted use, the data and reporting issues.</span></span>
+            </a></li>
+            <li><a class="row" href="#/contact" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);color:var(--color-text);text-decoration:none">
+              <span style="font-weight:800;color:var(--color-accent-700);font-variant-numeric:tabular-nums;line-height:1.5">04</span>
+              <span style="display:grid;gap:4px"><span class="row-title" style="font-weight:800;font-size:clamp(22px,2.4cqw,28px);line-height:1.15;letter-spacing:-.015em">Contact Us →</span><span style="font-size:15px;line-height:1.6;color:var(--color-neutral-800)">Tell the team about a broken link or a dataset issue.</span></span>
+            </a></li>
+          </ol>
+          <div style="margin-top:32px;padding:18px 20px;max-width:760px;display:grid;gap:6px;background:var(--color-surface)">
+            <strong style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Came from a download email?</strong>
+            <span style="font-size:15px;line-height:1.6">Download links are personal and expire. Request a fresh one from <a href="#/getting/gt_access" style="color:var(--color-accent-700);text-underline-offset:3px">Getting the Database</a> — it arrives straight away.</span>
+          </div>
+        </section>
+      </main>
+
+      <footer style="border-top:2px solid var(--color-divider)">
+        <div style="max-width:1240px;margin:0 auto;padding:56px var(--gx) 32px;display:grid;gap:48px">
+          <div style="display:flex;flex-wrap:wrap;gap:40px 48px">
+            <div style="flex:2 1 320px;display:grid;gap:14px;align-content:start">
+              <a href="#/home" style="display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--color-text);text-decoration:none">
+                <span aria-hidden="true" style="display:inline-flex;gap:3px"><span style="width:9px;height:9px;background:var(--color-accent)"></span><span style="width:9px;height:9px;background:var(--color-text)"></span></span>
+                Ampe-DB
+              </a>
+              <p style="margin:0;max-width:44ch;font-size:14px;line-height:1.6;color:var(--color-neutral-700)">A dataset for human activity and interaction analysis using the Ghanaian game Ampe. Developed through the Young Africans Research Academy (YARA).</p>
+            </div>
+            <div style="flex:1 1 160px;display:grid;gap:8px;align-content:start;font-size:14px">
+              <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700);margin-bottom:4px">Dataset</span>
+              <a href="#/database/db_overview" style="color:var(--color-text);text-decoration:none">Dataset overview</a>
+              <a href="#/database/db_structure" style="color:var(--color-text);text-decoration:none">Database structure</a>
+              <a href="#/research/rs_protocols" style="color:var(--color-text);text-decoration:none">Evaluation protocols</a>
+              <a href="#/research/rs_results" style="color:var(--color-text);text-decoration:none">Baseline V1 results</a>
+            </div>
+            <div style="flex:1 1 160px;display:grid;gap:8px;align-content:start;font-size:14px">
+              <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700);margin-bottom:4px">Access</span>
+              <a href="#/getting/gt_access" style="color:var(--color-text);text-decoration:none">Access the dataset</a>
+              <a href="#/getting/gt_receive" style="color:var(--color-text);text-decoration:none">What you receive</a>
+              <a href="#/getting/gt_verify" style="color:var(--color-text);text-decoration:none">Verify checksums</a>
+              <a href="#/getting/gt_version" style="color:var(--color-text);text-decoration:none">Version information</a>
+            </div>
+            <div style="flex:1 1 160px;display:grid;gap:8px;align-content:start;font-size:14px">
+              <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-neutral-700);margin-bottom:4px">Information</span>
+              <a href="#/terms" style="color:var(--color-text);text-decoration:none">Terms of use</a>
+              <a href="#/terms/tm_warranty" style="color:var(--color-text);text-decoration:none">Ethical use</a>
+              <a href="#/faq" style="color:var(--color-text);text-decoration:none">FAQ</a>
+              <a href="#/contact" style="color:var(--color-text);text-decoration:none">Contact us</a>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--color-divider);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;font-size:13px;color:var(--color-neutral-700)">
+            <span>© 2026 Ampe-DB · Young Africans Research Academy (YARA)</span>
+            <span>Ampe-DB V1 · Baseline V1 benchmark</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    </div>
+  </div>
+  </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":2800,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      frames: [
+        { label: '390 px — phone', cls: 'w390' },
+        { label: '768 px — tablet', cls: 'w768' },
+        { label: '1440 px — desktop', cls: 'w1440' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -23,7 +23,7 @@ const pathClasses = "font-mono text-[13.5px] whitespace-pre"
 
 export function FolderTree() {
   return (
-    <div className="overflow-x-auto bg-surface px-6 py-5">
+    <div tabIndex={0} className="overflow-x-auto bg-surface px-6 py-5">
       <div className="grid min-w-[620px] grid-cols-[max-content_minmax(200px,1fr)_max-content] items-baseline gap-x-8 leading-[2.1]">
         <span className={`${pathClasses} font-bold`}>Ampe-DB_V1/</span>
         <span />

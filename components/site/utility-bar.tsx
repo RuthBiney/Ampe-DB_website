@@ -6,7 +6,7 @@ import { utilityBar } from "@/content/site"
 // across the bar.
 export function UtilityBar() {
   return (
-    <div className="border-b border-border">
+    <aside aria-label="Release" className="border-b border-border">
       <Container className="py-[7px] text-[12px] leading-[1.6] tracking-[.07em] text-neutral-700 uppercase">
         <p className="m-0 sm:hidden">{utilityBar.join(" · ")}</p>
         <div className="hidden justify-between gap-x-6 sm:flex">
@@ -15,6 +15,6 @@ export function UtilityBar() {
           ))}
         </div>
       </Container>
-    </div>
+    </aside>
   )
 }

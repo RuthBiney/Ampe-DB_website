@@ -19,7 +19,7 @@ export function ArrowLink({
     <Link
       href={href}
       className={cn(
-        "w-fit",
+        "w-fit pointer-coarse:inline-flex pointer-coarse:min-h-11 pointer-coarse:items-center",
         size === "md" ? "text-[15px] font-extrabold" : "text-[14px] font-semibold",
         className
       )}

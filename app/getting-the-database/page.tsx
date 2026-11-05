@@ -28,7 +28,10 @@ import { gettingRail, railItem } from "@/content/sections"
 import { linkTtlText } from "@/lib/link-ttl"
 import { cn } from "@/lib/utils"
 
-export const metadata: Metadata = { title: "Getting the Database" }
+const lead =
+  "Ampe-DB is openly available to everyone and free of charge. Before downloading, each user completes a short access form stating their intended purpose. It is a required use declaration — not an approval process — and there is no waiting period."
+
+export const metadata: Metadata = { title: "Getting the Database", description: lead }
 
 const section = (id: string) => {
   const { number, label } = railItem(gettingRail, id)
@@ -60,14 +63,14 @@ export default function GettingPage() {
         <PageHeader
           eyebrow="03 — Getting the Database"
           lines={["From declaration", "to download."]}
-          lead="Ampe-DB is openly available to everyone and free of charge. Before downloading, each user completes a short access form stating their intended purpose. It is a required use declaration — not an approval process — and there is no waiting period."
+          lead={lead}
         />
         <DocLayout rail={<SectionRail groups={gettingRail} />}>
           <DocSection {...section("gt_access")} titleClassName="mb-7">
             <AutoGrid min="320px" className="items-start gap-x-12 gap-y-10">
               <div className="grid content-start gap-7">
                 <div>
-                  <h4 className="mt-0 mb-1 text-[19px]">Access process</h4>
+                  <h3 className="mt-0 mb-1 text-[19px]">Access process</h3>
                   <NumberedList
                     items={[
                       "Complete the official access form with your name, contact email, affiliation where applicable, intended use and a short description of the project or purpose.",
@@ -77,7 +80,7 @@ export default function GettingPage() {
                   />
                 </div>
                 <div>
-                  <h4 className="mt-0 mb-3 text-[19px]">Who may download</h4>
+                  <h3 className="mt-0 mb-3 text-[19px]">Who may download</h3>
                   <BulletList className="text-neutral-800">
                     <li>Anyone, after completing the access form and agreeing to the release terms.</li>
                     <li>
@@ -98,7 +101,7 @@ export default function GettingPage() {
 
             <div className="mt-14 grid gap-4">
               <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                <h4 className="m-0 text-[20px]">Release packages</h4>
+                <h3 className="m-0 text-[20px]">Release packages</h3>
                 <span className="inline-flex items-center gap-2 text-[13px] text-neutral-700">
                   <MailIcon size={14} aria-hidden="true" className="shrink-0" />
                   Download links are emailed after the declaration
@@ -128,7 +131,7 @@ export default function GettingPage() {
           </DocSection>
 
           <DocSection {...section("gt_receive")} titleClassName="mb-6">
-            <h4 className="mt-0 mb-3 text-[19px]">Approved V1 components</h4>
+            <h3 className="mt-0 mb-3 text-[19px]">Approved V1 components</h3>
             <BulletList className="max-w-[70ch]">
               <li>Canonical RGB MP4 clips with synchronized embedded audio.</li>
               <li>Normalized 2D pose CSV files.</li>
@@ -199,7 +202,7 @@ export default function GettingPage() {
           </DocSection>
 
           <DocSection {...section("gt_verify")} titleClassName="mb-6">
-            <h4 className="mt-0 mb-2 text-[19px]">Two levels of verification</h4>
+            <h3 className="mt-0 mb-2 text-[19px]">Two levels of verification</h3>
             <Table className="min-w-[560px]">
               <TableHeader>
                 <TableRow>

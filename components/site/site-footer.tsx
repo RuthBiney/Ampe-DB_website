@@ -13,7 +13,7 @@ export function SiteFooter() {
           <div className="grid flex-[2_1_320px] content-start gap-3.5">
             <Link
               href="/"
-              className="inline-flex w-fit items-center gap-2.5 text-[19px] font-extrabold text-foreground no-underline hover:text-foreground"
+              className="inline-flex w-fit items-center gap-2.5 pointer-coarse:min-h-11 text-[19px] font-extrabold text-foreground no-underline hover:text-foreground"
             >
               <BrandMark />
               Ampe-DB
@@ -34,7 +34,7 @@ export function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="w-fit text-foreground no-underline hover:text-brand-700"
+                  className="w-fit text-foreground no-underline hover:text-brand-700 pointer-coarse:inline-flex pointer-coarse:min-h-11 pointer-coarse:items-center"
                 >
                   {link.label}
                 </Link>

@@ -4,17 +4,19 @@ import { Eyebrow } from "@/components/site/eyebrow"
 import { cn } from "@/lib/utils"
 
 // Inner-page header: "0N — Page name" eyebrow, a two-line H1 with optical
-// alignment, a lead and optional actions.
+// alignment (the second line red when `accent`), a lead and optional actions.
 export function PageHeader({
   eyebrow,
   lines,
   lead,
+  accent = false,
   children,
   className,
 }: {
   eyebrow: string
   lines: readonly [string, string]
   lead?: React.ReactNode
+  accent?: boolean
   children?: React.ReactNode
   className?: string
 }) {
@@ -22,8 +24,8 @@ export function PageHeader({
     <header className={cn("grid gap-6 pt-[clamp(56px,7vw,88px)] pb-14", className)}>
       <Eyebrow className="block">{eyebrow}</Eyebrow>
       <h1 className="m-0 ml-[-.058em] text-[clamp(42px,6vw,84px)] leading-none tracking-[-.03em]">
-        {lines.map((line) => (
-          <span key={line} className="block">
+        {lines.map((line, index) => (
+          <span key={line} className={cn("block", accent && index === 1 && "text-brand")}>
             {line}
           </span>
         ))}
