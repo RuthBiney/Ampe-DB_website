@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/table"
 import { packages } from "@/content/packages"
 import { gettingRail, railItem } from "@/content/sections"
+import { linkTtlText } from "@/lib/link-ttl"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = { title: "Getting the Database" }
@@ -170,8 +171,8 @@ export default function GettingPage() {
           <DocSection {...section("gt_download")}>
             <Lead>
               After completing the access form, open the personal link we email you and download
-              Ampe-DB free of charge. The link works for 7 days; if it expires, submit the form again
-              for a new one. No separate approval is required.
+              Ampe-DB free of charge. The link works for {linkTtlText()}; if it expires, submit the
+              form again for a new one. No separate approval is required.
             </Lead>
             <Secondary>
               Preserve the directory structure: filenames and relative paths are used to align
