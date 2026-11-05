@@ -15,6 +15,7 @@ import { SectionRail } from "@/components/patterns/section-rail"
 import { Stat } from "@/components/patterns/stat"
 import { StepCard } from "@/components/patterns/step-card"
 import { TaskChart } from "@/components/patterns/task-chart"
+import { ProtocolDiagram } from "@/components/research/protocol-diagram"
 import { ProtocolLadder } from "@/components/research/protocol-ladder"
 import { ResultsTable } from "@/components/research/results-table"
 import { Container } from "@/components/site/container"
@@ -167,6 +168,9 @@ export default function ResearchPage() {
               in training.
             </Lead>
             <ProtocolLadder />
+            <SubHeading className="mt-12 mb-1">Conceptual comparison of evaluation protocols</SubHeading>
+            <Secondary className="mt-0 mb-5">Reference benchmark · Unseen pair · Unseen participant</Secondary>
+            <ProtocolDiagram />
             <Callout label="Terminology" className="mt-8">
               Say <em>pair-held-out</em> for the primary cross-pair protocol and{" "}
               <em>participant-held-out diagnostic</em> for the unseen-participant analysis. Do not call
