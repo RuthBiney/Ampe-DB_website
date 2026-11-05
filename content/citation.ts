@@ -18,10 +18,9 @@ export const citationText = `${citation.before}${citation.title}${citation.after
 
 /** Shown and copied in curly quotes. */
 export const acknowledgementText =
-  "“This work uses Ampe-DB, developed through the Young Africans Research Academy (YARA) to support research on human activity and interaction analysis using the Ghanaian game Ampe.”"
+  "“This work uses Ampe-DB, created by Ruth Senior Biney and presented at the Young Africans Research Academy (YARA) to support research on human activity and interaction analysis using the Ghanaian game Ampe.”"
 
 export const citationFacts = [
   { term: "Authors", lines: ["Ruth Senior Biney", "Isaac Kojo Yedonu Aboah"] },
-  { term: "Developed through", lines: ["Young Africans Research Academy (YARA)"] },
   { term: "Year", lines: ["2026"] },
 ] as const

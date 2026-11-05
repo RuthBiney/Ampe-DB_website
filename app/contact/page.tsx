@@ -25,7 +25,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="07 — Contact Us"
           lines={["Contact", "the team."]}
-          lead="Ampe-DB was developed through the Young Africans Research Academy (YARA) to advance research capacity, culturally grounded data resources and reproducible human interaction research."
+          lead="Ampe-DB was created by Ruth Senior Biney and presented at the Young Africans Research Academy (YARA). It aims to advance research capacity, culturally grounded data resources and reproducible human interaction research."
         />
 
         <section className="border-t-2 border-border pt-10 pb-16">
