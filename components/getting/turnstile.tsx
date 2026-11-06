@@ -3,6 +3,8 @@
 import * as React from "react"
 import Script from "next/script"
 
+import { TURNSTILE_ACTION } from "@/lib/turnstile-action"
+
 // Cloudflare Turnstile widget, rendered explicitly so the form can reset it
 // after each submit (tokens are single-use). The site key is the only public
 // key on the site. Below 300px of width the widget switches to its compact
@@ -53,6 +55,7 @@ export function Turnstile({
     if (!ready || !element || !api || !siteKey) return
     const id = api.render(element, {
       sitekey: siteKey,
+      action: TURNSTILE_ACTION,
       size: element.clientWidth >= 300 ? "flexible" : "compact",
       theme: "light",
       callback: (token: string) => onTokenRef.current(token),

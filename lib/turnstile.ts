@@ -1,10 +1,18 @@
 import { fakeServicesEnabled } from "@/lib/fake-services"
 import { requireEnv } from "@/lib/server-env"
+import { TURNSTILE_ACTION } from "@/lib/turnstile-action"
 
 // Cloudflare Turnstile server-side check. The visitor's IP is not sent: the
 // site stores and forwards no IP addresses.
 
 const VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+
+// Hostnames a token may come from, e.g. "ampe-db-website.vercel.app,ampe.yarafrica.org".
+// Unset skips the check; production must not list localhost.
+function allowedHostnames(): string[] | null {
+  const list = process.env.TURNSTILE_HOSTNAMES?.split(",").map((host) => host.trim().toLowerCase()).filter(Boolean)
+  return list?.length ? list : null
+}
 
 // A rejection logs Cloudflare's error codes (fixed strings such as
 // "invalid-input-secret"), never the token, so a misconfigured key shows up
@@ -29,8 +37,24 @@ export async function verifyTurnstile(token: string | undefined): Promise<boolea
     logRejection(`siteverify HTTP ${response.status}`)
     return false
   }
-  const result = (await response.json()) as { success?: boolean; "error-codes"?: unknown }
-  if (result.success === true) return true
+  const result = (await response.json()) as {
+    success?: boolean
+    action?: unknown
+    hostname?: unknown
+    "error-codes"?: unknown
+  }
+  if (result.success === true) {
+    if (result.action !== TURNSTILE_ACTION) {
+      logRejection("action-mismatch")
+      return false
+    }
+    const hosts = allowedHostnames()
+    if (hosts && !(typeof result.hostname === "string" && hosts.includes(result.hostname.toLowerCase()))) {
+      logRejection("hostname-not-allowed")
+      return false
+    }
+    return true
+  }
   const codes = Array.isArray(result["error-codes"])
     ? result["error-codes"].filter((code): code is string => typeof code === "string")
     : []
